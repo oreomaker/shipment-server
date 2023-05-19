@@ -13,10 +13,10 @@ import java.util.List;
 public class WebConfig implements WebMvcConfigurer {
     private static final List<String> WHITE_LIST = new ArrayList<>();
     static {
-        WHITE_LIST.add("/api/user/login");
-        WHITE_LIST.add("/api/user/register");
-        WHITE_LIST.add("/api/user/info");
-        WHITE_LIST.add("/api/user/logout");
+        WHITE_LIST.add("/v1/user/login");
+        WHITE_LIST.add("/v1/user/register");
+        WHITE_LIST.add("/v1/user/info");
+        WHITE_LIST.add("/v1/user/logout");
         WHITE_LIST.add("/error");
         WHITE_LIST.add("/swagger-ui/*");
         WHITE_LIST.add("/swagger-resources/*");
