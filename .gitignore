@@ -1,6 +1,7 @@
 HELP.md
 application.properties
 target/
+.DS_Store
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
