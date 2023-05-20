@@ -32,6 +32,13 @@ public class OrderController {
                 orderVO.getCargo());
     }
 
+    @PostMapping("/order-price")
+    public BaseResponse getOrderPrice(@RequestBody OrderVO orderVO) {
+        return orderService.getOrderPrice(orderVO.getSender(),
+                orderVO.getReceiver(),
+                orderVO.getCargo());
+    }
+
     @PostMapping("/shipments")
     public BaseResponse updateOrderShipment(@RequestBody OrderShipmentVO orderShipmentVO) {
 

@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -90,5 +91,15 @@ public class ShipOrderService {
 
     public List<ShipOrder> getOrders(Integer userId) {
         return orderRepository.findAllByUserIdOrderByCreateTimeDesc(userId);
+    }
+
+    public BaseResponse getOrderPrice(OrderSenderVO sender, OrderReceiverVO receiver, CargoVO cargo) {
+        var map = new HashMap<String, Object>();
+        // 仅用作演示，实际应根据距离和货物重量计算价格
+        map.put("price", 10.0f + 0.1*cargo.getWeight());
+        map.put("basePrice", 10.0f);
+        map.put("pricingType", "按重量计费");
+        map.put("surcharge", 0.1*cargo.getWeight());
+        return BaseResponse.success(map);
     }
 }
